@@ -89,7 +89,7 @@ function AboutPage() {
             <div className="flex flex-col lg:flex-row gap-8 mt-9 w-full justify-center items-center lg:items-start">
                 
                 {/* Kotak Foto Profil */}
-                <div data-aos="fade-right" className="w-full max-w-[689px] lg:w-[689px] h-[400px] md:h-[541px] border border-white/10 bg-[#0C0E23] flex relative rounded-lg justify-center overflow-hidden">
+                <div data-aos="fade-right" className="w-full max-w-[689px] lg:w-[689px] h-[400px] md:h-[541px] border border-white/10 bg-blue-300 flex relative rounded-lg justify-center overflow-hidden">
                     <img src={wimbopng} alt="Wimbo" className='w-full h-full object-cover md:object-contain' />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#02010A] via-[#0C0E23]/60 to-transparent backdrop-blur-[2px]"></div>
                     <div className="absolute flex items-center gap-3 bottom-6 z-10 px-6">
