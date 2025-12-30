@@ -1,0 +1,66 @@
+:root {
+    /* Konfigurasi Slider 1 */
+    --h1: 80px;
+    --w1: 80px;
+    --g1: 15px;
+    --count1: 6;
+
+    /* Konfigurasi Slider 2 */
+    --h2: 80px;
+    --w2: 80px;
+    --g2: 15px;
+    --count2: 8;
+
+    --time: 15s;
+}
+
+.sliders {
+    display: flex;
+    gap: 20px;
+    /* Efek miring khas portofolio */
+    transform: rotate(10deg) translateY(-20px);
+}
+
+.slider-container {
+    height: 300px; /*100%*/ 
+    width: var(--w1);
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+
+.slider-track {
+    display: flex;
+    flex-direction: column;
+    animation: moveUp var(--time) linear infinite;
+}
+
+
+.slider-track.reverse {
+    animation: moveDown var(--time) linear infinite;
+}
+
+.slide {
+    width: var(--w1);
+    height: var(--h1);
+    margin-bottom: var(--g1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+
+@keyframes moveUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(-1 * (var(--h1) + var(--g1)) * var(--count1))); }
+}
+
+@keyframes moveDown {
+    0% { transform: translateY(calc(-1 * (var(--h2) + var(--g2)) * var(--count2))); }
+    100% { transform: translateY(0); }
+}
