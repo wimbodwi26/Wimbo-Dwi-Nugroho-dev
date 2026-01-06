@@ -3,9 +3,10 @@ import 'aos/dist/aos.css';
 import { useEffect, useRef, useState } from 'react';
 import '../../styles/infiniteScroll.css';
 import { FaArrowRight } from "react-icons/fa";
-import { IoCopyOutline, IoCheckmarkOutline } from "react-icons/io5"; // Tambah icon check
+import { IoCopyOutline, IoCheckmarkOutline } from "react-icons/io5"; 
 
 import Globe, { type GlobeMethods } from 'react-globe.gl';
+import { Link } from 'react-router-dom';
 
 // Import assets 
 import CssLogo from '../../assets/css-3-svgrepo-com.svg';
@@ -93,10 +94,10 @@ function AboutPage() {
                     <img src={wimbopng} alt="Wimbo" className='w-full h-full object-cover md:object-contain' />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#02010A] via-[#0C0E23]/60 to-transparent backdrop-blur-[2px]"></div>
                     <div className="absolute flex items-center gap-3 bottom-6 z-10 px-6">
-                        <a href='#project' className="group flex items-center gap-3">
-                            <p className="text-white text-[18px] md:text-[24px] font-bold">see details about me..</p>
-                            <FaArrowRight size={20} className='text-white transition-transform duration-300 group-hover:translate-x-2' />
-                        </a>
+                        <Link to="/detail" className="group flex items-center gap-3">
+            <p className="text-white text-[18px] md:text-[24px] font-bold">see details about me..</p>
+            <FaArrowRight className='text-white transition-transform duration-300 group-hover:translate-x-2' />
+             </Link>
                     </div>
                 </div>
 
@@ -177,10 +178,10 @@ function AboutPage() {
                                 <h2 className='font-bold text-[20px] md:text-[24px] text-white leading-tight'>Do you want to start a project?</h2>
                                 <button 
                                     onClick={handleCopy}
-                                    className='flex items-center gap-2 bg-[#161A31] px-4 py-2 rounded-md mt-4 hover:bg-[#CBACF9] hover:text-black transition-all group active:scale-95'
+                                    className='flex items-center gap-2 text-white bg-[#161A31] px-4 py-2 rounded-md mt-4 hover:bg-[#CBACF9] hover:text-black transition-all group active:scale-95'
                                 >
-                                   {copied ? <IoCheckmarkOutline className="text-green-400" /> : <IoCopyOutline />}
-                                   <span className='font-bold text-xs md:text-sm'>
+                                   {copied ? <IoCheckmarkOutline className="text-white" /> : <IoCopyOutline />}
+                                   <span className='font-bold text-white hover:text-black text-xs md:text-sm'>
                                        {copied ? "Email Copied!" : "Copy my email address"}
                                    </span>
                                 </button>

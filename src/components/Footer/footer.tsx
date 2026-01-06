@@ -14,7 +14,7 @@ function Footer() {
   { icon: <GrInstagram size={22} />, url: "https://instagram.com/username" },
   { icon: <FaXTwitter size={22} />, url: "https://twitter.com/username" },
   { icon: <SiGithub size={22} />, url: "https://github.com/wimbodwi26" },
-  { icon: <FaWhatsapp size={22} />, url: "https://wa.me/87721716160" },
+  { icon: <FaWhatsapp size={22} />, url: "https://wa.me/+6287721716160" },
   { icon: <IoLogoLinkedin size={22} />, url: "https://linkedin.com/in/wimbo-dwi-nugroho" },
 ];
 

@@ -78,12 +78,11 @@ function HomePage() {
         </div>
 
         {/* BUTTON — pointer aktif */}
-        <button
-          onClick={() => console.log("See my work clicked")}
-          className="w-[180px] md:w-[207px] rounded-md cursor-pointer h-[56px] md:h-[66px] bg-[#06091F] font-bold text-white pointer-events-auto hover:scale-105 duration-200 shadow-lg shadow-purple-500/20"
+        <a href="#project"
+          className="w-[180px] md:w-[207px] rounded-md cursor-pointer justify-center items-center flex h-[56px] md:h-[66px] bg-[#06091F] font-bold text-white pointer-events-auto hover:scale-105 duration-200 shadow-lg shadow-purple-500/20"
         >
-          <p className="text-base md:text-[18px]">See my work</p>
-        </button>
+          <p className="text-base flex justify-center items-center md:text-[18px]">See my work</p>
+        </a>
       </div>
     </section>
 
