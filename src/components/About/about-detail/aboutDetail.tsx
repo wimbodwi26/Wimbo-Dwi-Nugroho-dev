@@ -17,10 +17,10 @@ function AboutDetail() {
            <img src={wimbopng} alt="wimbo"  />
            </div>
 
-           <div className='lg:w-[500px] w-full flex flex-col gap-4 text-white font-sans'>
+           <div className='lg:w-[500px] w-full flex flex-col gap-2 text-white font-sans'>
            <p>A Mechanical Engineering graduate highly focused on detail and accuracy. Determined to pursue a remote career in technology and data, and open to freelance opportunities.</p>
            <span className='font-sans font-bold'>Core Value & Technical Skills</span>
-           <span className='relative left-7 gap-3 flex flex-col'>
+           <span className='relative lg:left-7 left-3 lg:w-[400px] w-full  gap-3 flex flex-col'>
            <li>Validated Data Analysis Proficiency: Holds a certificate from the Virtual Experience Program Data Analyst (Deloitte Australia via Forage). Capable of processing, analyzing, and presenting data with high accuracy standards.
 </li>
            <li>​Prior UI/UX Development Experience: Involved in past open-source development on GitHub (Goodfrestissue), contributing to the About Page Navigation (UI) feature. Demonstrates a technical understanding of user interfaces and team collaboration.</li>
