@@ -12,10 +12,17 @@ function AboutDetail() {
         <span className="flex justify-start items-center p-4 text-white text-[24px] font-semibold">
             <Link to="/" className="flex items-center gap-[0.2px] justify-center"><IoIosArrowBack size={24} />Back</Link>
         </span>
-        <div className='flex justify-center lg:flex-row flex-col gap-6 p-3'>
-            <div className='bg-blue-400 flex items-center'>
-           <img src={wimbopng} alt="wimbo"  />
-           </div>
+        <div className='flex justify-center lg:flex-row items-center flex-col gap-6'>
+            <div className="w-full max-w-[689px] lg:w-[689px] h-[400px] 
+                bg-blue-400 p-5 rounded-lg border-[12px] border-blue-600 
+                shadow-[inset_0_4px_10px_rgba(0,0,0,0.3),0_10px_20px_rgba(0,0,0,0.2)] 
+                flex relative overflow-hidden">
+  
+               <div className="w-full h-full bg-blue-200 overflow-hidden rounded-sm shadow-inner border border-blue-700/20">
+               <img src={wimbopng} alt="wimbo" className="w-full h-full object-cover md:object-contain" />
+               </div>
+
+               </div>
 
            <div className='lg:w-[500px] w-full flex flex-col gap-2 text-white font-sans'>
            <p>A Mechanical Engineering graduate highly focused on detail and accuracy. Determined to pursue a remote career in technology and data, and open to freelance opportunities.</p>
