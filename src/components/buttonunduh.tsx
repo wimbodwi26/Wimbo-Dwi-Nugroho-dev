@@ -25,10 +25,10 @@ const handleDownload = () => {
     }, 1000);
 }
     return (
-        <button onClick={handleDownload} className="bg-green-600 w-[200px] justify-center rounded-lg gap-2 flex items-center">
+        <button onClick={handleDownload} className="bg-green-600 w-[200px] hover:bg-green-400 hover:text-green-700 justify-center rounded-lg gap-2 flex items-center">
           {status === "idle" && label}
           {status === "loading" && (
-            <FaSpinner className="animate-spin" />
+            <FaSpinner className="animate-spin text-white" />
           )}
           {status === "success" && (
             <>
