@@ -33,7 +33,6 @@ const set1 = [CssLogo, goLogo, HtmlLogo, jsLogo, pyLogo, typLogo];
 const set2 = [sqlLogo, mongoLogo, expLogo, nodeLogo, rtLogo, nextLogo, tlwcssLogo, figLogo];
 
 function AboutPage() {
-    // FIX: Gunakan | undefined dan inisialisasi dengan undefined untuk menghindari error RefObject
     const globeEl = useRef<GlobeMethods | undefined>(undefined);
     const containerRef = useRef<HTMLDivElement>(null);
     
@@ -91,7 +90,7 @@ function AboutPage() {
                 
                 {/* Kotak Foto Profil */}
                 <div data-aos="fade-right" className="w-full max-w-[689px] lg:w-[689px] h-[400px] md:h-[541px] border border-white/10 bg-blue-300 flex relative rounded-lg justify-center overflow-hidden">
-                    <img src={wimbopng} alt="Wimbo" className='w-full h-full object-cover md:object-contain' />
+                    <img loading='lazy' src={wimbopng} alt="Wimbo" className='w-full h-full object-cover md:object-contain' />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#02010A] via-[#0C0E23]/60 to-transparent backdrop-blur-[2px]"></div>
                     <div className="absolute flex items-center gap-3 bottom-6 z-10 px-6">
                         <Link to="/detail" className="group flex items-center gap-3">
@@ -141,7 +140,7 @@ function AboutPage() {
                                 <div className='slider-track'>
                                     {[...set1, ...set1, ...set1].map((logo, index) => (
                                         <div className='slide border border-white/10' key={`s1-${index}`}>
-                                            <img src={logo} alt='skill' className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                                            <img loading='lazy' src={logo} alt='skill' className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                                         </div>
                                     ))}
                                 </div>
@@ -150,7 +149,7 @@ function AboutPage() {
                                 <div className='slider-track reverse'>
                                     {[...set2, ...set2, ...set2].map((logo, index) => (
                                         <div className='slide border border-white/10' key={`s2-${index}`}>
-                                            <img src={logo} alt='skill' className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                                            <img loading='lazy' src={logo} alt='skill' className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                                         </div>
                                     ))}
                                 </div>
@@ -172,7 +171,7 @@ function AboutPage() {
 
                     {/* Email Copy Box dengan Logic */}
                     <div data-aos="fade-right" className="relative border border-white/10 bg-[#0C0E23] overflow-hidden w-full rounded-lg h-[180px]">
-                        <img src={bg2} alt="" className="absolute inset-0 w-full h-full object-cover z-10" />
+                        <img loading='lazy' src={bg2} alt="" className="absolute inset-0 w-full h-full object-cover z-10" />
                         <div className="relative h-full flex z-20 justify-center items-center p-4">
                             <div className='items-center justify-center flex flex-col text-center'>
                                 <h2 className='font-bold text-[20px] md:text-[24px] text-white leading-tight'>Do you want to start a project?</h2>
@@ -191,8 +190,8 @@ function AboutPage() {
                 </div>
 
                 <div data-aos="fade-left" className="w-full max-w-[859px] h-[300px] md:h-[390px] rounded-lg bg-[#0C0E23] overflow-hidden border border-white/10 relative">
-                    <img src={bg} alt="" className="absolute inset-0 w-full h-full object-cover z-10 opacity-40" />
-                    <img src={img} alt="" className="absolute bottom-0 right-0 z-20 h-[70%] md:h-[95%] object-contain opacity-40 md:opacity-100" />
+                    <img loading='lazy' src={bg} alt="" className="absolute inset-0 w-full h-full object-cover z-10 opacity-40" />
+                    <img loading='lazy' src={img} alt="" className="absolute bottom-0 right-0 z-20 h-[70%] md:h-[95%] object-contain opacity-40 md:opacity-100" />
                     <div className="absolute inset-0 z-30 p-6 md:p-10 flex flex-col justify-center">
                         <h2 className="text-white text-xl md:text-3xl font-bold leading-tight">
                             <span className="font-normal text-sm md:text-lg block mb-2 text-gray-400 uppercase tracking-widest">THE INSIDE SCOOP</span> 
