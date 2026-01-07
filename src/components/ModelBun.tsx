@@ -1,28 +1,38 @@
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, Center } from "@react-three/drei";
-import { useRef, useEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import * as THREE from "three";
 
 const DRACO_PATH = "/draco/";
+const MODEL_PATH = "/bumi.glb"; 
 
 export default function ModelBun({ scale = 3, ...props }) {
-  const gltf: any = useGLTF("/source/bumi.glb", DRACO_PATH);
-  const texture = useTexture("/textures/gltf_embedded_0.webp"); // contoh nama file tekstur
+  const { scene } = useGLTF(MODEL_PATH, DRACO_PATH);
+  const texture = useTexture("/textures/gltf_embedded_0.webp");
   const groupRef = useRef<THREE.Group>(null!);
 
-  // Apply texture sekali saja
-  useEffect(() => {
-    gltf.scene.traverse((node: any) => {
-      if (node.isMesh && node.material) {
-        node.material.map = texture;
-        node.material.needsUpdate = true;
+  
+  useLayoutEffect(() => {
+    texture.flipY = false; 
+    texture.colorSpace = THREE.SRGBColorSpace; 
+
+    scene.traverse((node) => {
+      if ((node as THREE.Mesh).isMesh) {
+        const mesh = node as THREE.Mesh;
+  
+        mesh.material = new THREE.MeshStandardMaterial({
+          map: texture,
+          roughness: 1, 
+          metalness: 0,
+        });
+        
+        
+        mesh.castShadow = false;
+        mesh.receiveShadow = false;
       }
     });
-  }, [gltf.scene, texture]);
+  }, [scene, texture]);
 
-  // Fix orbit -> center pivot
-
-  // Rotate model
   useFrame((_, delta) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.3;
@@ -32,11 +42,12 @@ export default function ModelBun({ scale = 3, ...props }) {
   return (
     <group ref={groupRef} scale={scale} {...props}>
       <Center>
-      <primitive object={gltf.scene} />
+        <primitive object={scene} />
       </Center>
     </group>
   );
 }
 
-useGLTF.preload("/bumi.glb", DRACO_PATH);
 
+useGLTF.preload(MODEL_PATH, DRACO_PATH);
+useTexture.preload("/textures/gltf_embedded_0.webp");
